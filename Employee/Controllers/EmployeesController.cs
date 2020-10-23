@@ -43,7 +43,7 @@ namespace Employee.Controllers
         }
 
         // GET: Employees/Create
-        public IActionResult Create()
+        public IActionResult AddOrEdit()
         {
             return View();
         }
@@ -53,7 +53,7 @@ namespace Employee.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,FullName,EmpCode,Position,OfficeLocation")] Employees employees)
+        public async Task<IActionResult> AddOrEdit([Bind("EmployeeId,FullName,EmpCode,Position,OfficeLocation")] Employees employees)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Employee.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,FullName,EmpCode,Position,OfficeLocation")] Employees employees)
+        public async Task<IActionResult> AddOrEdit(int id, [Bind("EmployeeId,FullName,EmpCode,Position,OfficeLocation")] Employees employees)
         {
             if (id != employees.EmployeeId)
             {
